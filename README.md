@@ -1,11 +1,7 @@
 # Combo
-Combo is a key combination detection module for LÖVE.
+Combo is a key combination detection module for LÖVE. The goal of Combo is to provide logic for key combinations sometimes referred as hotkeys.
 
-The goal of Combo is to provide logic for key combinations sometimes referred as hotkeys.
-
-Combo doesn't address how the inputs are "sensed".
-
-Inputs can be detected using love.keyboard.isDown, but something like [baton](https://github.com/tesselode/baton) created by tesselode is recommended.
+Combo doesn't address how the inputs are "sensed". Inputs can be detected using love.keyboard.isDown, but something like [baton](https://github.com/tesselode/baton) created by tesselode is recommended.
 
 This module was rewritten several times during it's creation. The idea of "A+B" has many interpretations. This module may have solved the "key combinations" in a way that you may not find useful. Please see the examples.
 
