@@ -78,6 +78,8 @@ Only the first four fields are used.
 * Third field is the **negative key modifiers**. These must not be pressed down.
 * Fourth field is the **"pressed"** keys. In the examples the "pressed" keys are true only for a single frame.
 
+The tables need to contain strings that can be used with isDown and isPressed-functions. In the case of love.keyboard.isDown official LÖVE [key constants](https://love2d.org/wiki/KeyConstant) are used.
+
 Detection of key combinations can differ depending on the implementation of isDown and isPressed-functions. For example a time-based isPressed-function can be more useful than frame-based when key comnination requires careful simultanious key presses.
 
 # Advanced usage
@@ -101,4 +103,4 @@ hotkey.sequence = {
 }
 ```
 
-# Advanced source code example
+# Source code example
