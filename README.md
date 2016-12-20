@@ -16,7 +16,7 @@ The module itself functions as an instanced object of the detection logic. Alter
 ```lua
 combo = require "combo"
 
-combo.sequence = {"subweapon", {"up", "attack"} }
+combo.sequence = {"subweapon", {"up", "x"} }
 ```
 
 Alternate way.
@@ -24,7 +24,7 @@ Alternate way.
 ```lua
 combo = require "combo"
 
-hotkey = combo.new({"subweapon", {"up", "attack"} })
+hotkey = combo.new({"subweapon", {"up", "x"} })
 ```
 
 Key combinations can also be detected from unpressed keys. In addition to "down" states additional table for "up" states can be created to provide a reference which keys cannot be pressed when executing the key combination.
@@ -33,7 +33,7 @@ Key combinations can also be detected from unpressed keys. In addition to "down"
 combo = require "combo"
 
 --Subweapon cannot be pressed while player is also pressing right.
-hotkey = combo.new({"subweapon", {"up", "attack"}, {"right"} })
+hotkey = combo.new({"subweapon", {"up", "x"}, {"right"} })
 ```
 
 Lastly where the hotkey detection is needed it can be done by reading the object's, "down", "pressed" and "released" table fields.
