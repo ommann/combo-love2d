@@ -1,13 +1,13 @@
 # Combo
 Combo is a key combination detection module for LÖVE.
 
-The goal of Combo is to provide logic for testing hotkeys or key combinations.
+The goal of Combo is to provide logic for key combinations sometimes referred as hotkeys.
 
 Combo doesn't address how the inputs are "sensed".
 
 Inputs can be detected using love.keyboard.isDown, but something like [baton](https://github.com/tesselode/baton) created by tesselode is recommended.
 
-This module was rewritten several times during it's creation. The idea of "a+b" has many interpretations. This module may have solved the "key combinations" in a way that you may not find useful. Please see the examples.
+This module was rewritten several times during it's creation. The idea of "A+B" has many interpretations. This module may have solved the "key combinations" in a way that you may not find useful. Please see the examples.
 
 # Simple usage
 First of all the module must be required and assigned to a variable.
@@ -81,6 +81,24 @@ Only the first four fields are used.
 Detection of key combinations can differ depending on the implementation of isDown and isPressed-functions. For example a time-based isPressed-function can be more useful than frame-based when key comnination requires careful simultanious key presses.
 
 # Advanced usage
+The more overlapping the key combinations become the more important the isPressed-function becomes. Simple usage is enough if A+B is considered the same as B+A. If the order matters it can be differentiated with the isPressed-function.
 
+```lua
+hotkey.sequence = {
+  --name, down, up, pressed
+  {"subweapon",   {"up", "attack"}, {}, {"attack"} },
+  {"jump_attack", {"up", "attack"}, {}, {"up"} }
+}
+```
+
+If hotkey can be executed in several ways, all the ways can be written in the table. If any of these key combinations is true, then the hotkey is true regardless how many of the others are false.
+
+```lua
+hotkey.sequence = {
+  --name, down, up, pressed
+  {"subweapon",   {"up", "attack"}, {}, {"attack"} },
+  {"subweapon", {"special1"} }
+}
+```
 
 # Advanced source code example
