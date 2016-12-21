@@ -10,7 +10,7 @@ end
 love.update = function()
   hotkey:update()
 
-  if combo.pressed.subweapon then
+  if hotkey.pressed.subweapon then
     print("Throwing an axe!")
   end
 end

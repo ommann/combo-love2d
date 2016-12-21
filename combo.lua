@@ -15,15 +15,11 @@ M.released = {}
 M.test_sequences = function(self)
   local override = {}
 
-  print(self, self.sequences)
-
   for _,sequence in ipairs(self.sequences) do
     local name     = sequence[1]
     local positive = sequence[2]
     local negative = sequence[3]
     local pressed  = sequence[4]
-
-    print(name, positive, negative, pressed)
 
     local bool = true
     local bool_down = nil
