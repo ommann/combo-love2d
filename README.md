@@ -97,6 +97,7 @@ hotkey.sequence = {
 ```
 
 # Simple source code example
+```lua
 combo = require "combo"
 
 love.load = function()
@@ -121,3 +122,4 @@ end
 love.keypressed = function(key)
   print(key)
 end
+```
