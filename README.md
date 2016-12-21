@@ -33,9 +33,12 @@ combo = require "combo"
 hotkey = combo.new({"subweapon", {"up", "x"}, {"right"} })
 ```
 
-Lastly where the hotkey detection is needed it can be done by reading the object's, "down", "pressed" and "released" table fields.
+
+The created objects must be updated using update-method before you using them. Lastly where the hotkey detection is needed it can be done by reading the object's, "down", "pressed" and "released" table fields.
 
 ```lua
+hotkey:update()
+
 if hotkey.pressed.subweapon then
   print("Throwing an axe!")
 end
