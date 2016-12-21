@@ -1,5 +1,6 @@
 local M = {}
 
+--[[
 if love.keyboard.isDown then
   M.isDown = love.keyboard.isDown
 end
@@ -8,15 +9,21 @@ M.down = {}
 M.previous_down = {}
 M.pressed = {}
 M.released = {}
+--]]
+
 
 M.test_sequences = function(self)
   local override = {}
 
-  for _,sequence in ipairs(self.sequence) do
+  print(self, self.sequences)
+
+  for _,sequence in ipairs(self.sequences) do
     local name     = sequence[1]
     local positive = sequence[2]
     local negative = sequence[3]
     local pressed  = sequence[4]
+
+    print(name, positive, negative, pressed)
 
     local bool = true
     local bool_down = nil
@@ -82,7 +89,7 @@ end
 M.new = function(sequences)
   local output = {}
 
-  output.sequence = sequences
+  output.sequences = sequences
 
   output.down = {}
   output.previous_down = {}

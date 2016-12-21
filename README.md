@@ -8,10 +8,7 @@ This module was rewritten several times during it's creation. The idea of "A+B" 
 # Simple usage
 First of all the module must be required and assigned to a variable.
 
-```lua
-combo = require "combo"
-```
-The module itself functions as an instanced object of the detection logic. Alternatively object can be created by calling the new-function. Lastly the key combinations are expressed in a table.
+New object can be created by calling the new-function. Lastly the key combinations are expressed in a table.
 
 ```lua
 combo = require "combo"
@@ -99,4 +96,28 @@ hotkey.sequence = {
 }
 ```
 
-# Source code example
+# Simple source code example
+combo = require "combo"
+
+love.load = function()
+
+  hotkey = combo.new {
+     {"subweapon", {"up", "x"} }
+  }
+end
+
+love.update = function()
+  hotkey:update()
+
+  if combo.pressed.subweapon then
+    print("Throwing an axe!")
+  end
+end
+
+love.draw = function()
+
+end
+
+love.keypressed = function(key)
+  print(key)
+end
